@@ -19,13 +19,16 @@
 
     <TextView
         android:id="@+id/tvTitle"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_marginStart="5dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="10dp"
         android:layout_toEndOf="@+id/ivPoster"
+        android:background="#F1C5B8"
+        android:padding="5dp"
         android:textSize="24sp"
+        android:textStyle="bold|italic"
         tools:text="Spider-Man: No Way Home" />
 
     <TextView
