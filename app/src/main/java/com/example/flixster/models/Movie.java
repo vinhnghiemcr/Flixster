@@ -26,4 +26,16 @@ public class Movie {
         }
         return movies;
     }
+
+    public String getBackdrop_path() {
+        return String.format("https://image.tmdb.org/t/p/w342/%s", backdrop_path);
+    }
+
+    public String getOriginal_title() {
+        return original_title;
+    }
+
+    public String getOverview() {
+        return overview;
+    }
 }
