@@ -10,11 +10,15 @@ import java.util.List;
 public class Movie {
 
     String backdrop_path;
+    String poster_path;
     String original_title;
     String overview;
 
+
+
     public Movie(JSONObject jsonObject) throws JSONException {
         backdrop_path = jsonObject.getString("backdrop_path");
+        poster_path = jsonObject.getString("poster_path");
         original_title = jsonObject.getString("original_title");
         overview = jsonObject.getString("overview");
     }
@@ -28,7 +32,10 @@ public class Movie {
     }
 
     public String getBackdrop_path() {
-        return String.format("https://image.tmdb.org/t/p/w342/%s", backdrop_path);
+        return String.format("https://image.tmdb.org/t/p/w342%s", backdrop_path);
+    }
+    public String getPoster_path() {
+        return String.format("https://image.tmdb.org/t/p/w342%s", poster_path);
     }
 
     public String getOriginal_title() {
