@@ -11,10 +11,11 @@
         android:id="@+id/ivPoster"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
-        android:scaleType="fitXY"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:contentDescription="@string/movie_poster"
+        android:scaleType="fitXY"
+        android:adjustViewBounds="true"
         tools:ignore="ImageContrastCheck"
         tools:srcCompat="@tools:sample/avatars" />
 

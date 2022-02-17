@@ -67,7 +67,8 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder>{
         TextView tvTitle;
         TextView tvOverview;
         ImageView ivPoster;
-
+        int radius = 30;
+        int margin = 10;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             movieContainer = itemView.findViewById(R.id.movieContainer);
@@ -88,7 +89,10 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder>{
             else {
                 imageUrl = movie.getPoster_path();
             }
-            Glide.with(context).load(imageUrl).placeholder(R.drawable.hourglass).into(ivPoster);
+            Glide.with(context).load(imageUrl).placeholder(R.drawable.hourglass)
+                    .centerCrop() // scale image to fill the entire ImageView
+                    .transform(new RoundedCornersTransformation(radius, margin))
+                    .into(ivPoster);
 
             //Register click listener on the movie item row
             movieContainer.setOnClickListener(new View.OnClickListener() {
@@ -99,8 +103,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder>{
                     i.putExtra("movie", Parcels.wrap(movie));
                     Pair<View, String> p1 = Pair.create(tvTitle, "title");
                     Pair<View, String> p2 = Pair.create(tvOverview, "overview");
-                    ActivityOptionsCompat options = ActivityOptionsCompat.
-                            makeSceneTransitionAnimation((Activity) context, p1, p2);
+                    ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation((Activity) context, p1, p2);
                     context.startActivity(i, options.toBundle());
                 }
             });
