@@ -16,6 +16,7 @@
         android:layout_alignParentTop="true"
         android:contentDescription="@string/movie_poster"
         tools:ignore="ImageContrastCheck"
+        android:adjustViewBounds="true"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
